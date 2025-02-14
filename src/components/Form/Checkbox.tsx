@@ -25,9 +25,9 @@ type Props = {
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
 
 export const Checkbox = ({ label, className, type = 'checkbox', ...props }: Props) => {
-    const { register } = useFormContext() || {}
+    const register = useFormContext()?.register
 
-    const formRegister = props.name ? register?.(props.name) : undefined
+    const formRegister = props.name && register ? register(props.name) : {}
 
     const computedClassName = clsx(styles({ intent: props.intent }), className)
 
