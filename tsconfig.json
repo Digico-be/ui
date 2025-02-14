@@ -10,6 +10,8 @@
         "strict": true,
         "moduleResolution": "node",
         "baseUrl": "./",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
         "paths": {
             "@components/*": ["src/components/*"]
         }
