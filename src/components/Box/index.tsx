@@ -1,4 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority'
+import { clsx } from 'clsx'
 
 const styles = cva('rounded', {
     variants: {
@@ -25,13 +26,13 @@ type Variants = VariantProps<typeof styles>
 type Props = {
     children: React.ReactNode
     className?: string
-    intent: Variants['intent']
-    size: Variants['size']
+    intent?: Variants['intent']
+    size?: Variants['size']
 }
 
-export const Box = ({ children, className = '', intent = 'info', size = 'default', ...props }: Props) => {
+export const Box = ({ children, className, intent, size, ...props }: Props) => {
     return (
-        <div className={styles({ intent, size, className })} {...props}>
+        <div className={clsx(styles({ intent, size }), className)} {...props}>
             {children}
         </div>
     )
