@@ -73,7 +73,7 @@ export const Button = ({ href, isLoading, intent, size, className, children, ...
     return (
         <button {...(restProps as ButtonHTMLAttributes<HTMLButtonElement>)} className={computedClassName} disabled={isLoading || restProps.disabled}>
             {isLoading ? (
-                <div className="pointer-events-none border-current inline-block relative before:block before:absolute before:w-full before:h-full before:rounded-full before:border-solid before:border-2 before:border-t-current before:border-r-current before:border-b-transparent before:border-l-transparent before:animate-spin"></div>
+                <div className="size-6 pointer-events-none border-current inline-block relative before:block before:absolute before:w-full before:h-full before:rounded-full before:border-solid before:border-2 before:border-t-current before:border-r-current before:border-b-transparent before:border-l-transparent before:animate-spin"></div>
             ) : (
                 children
             )}

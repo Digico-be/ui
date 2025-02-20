@@ -76,7 +76,7 @@ const Field = (props: FieldProps) => {
 
     return (
         <Container {...restProps}>
-            <Input {...(restProps as InputProps)} className={computedClassName} />
+            <Input {...(restProps as InputProps)} className={computedClassName} type={props.type} />
         </Container>
     )
 }
