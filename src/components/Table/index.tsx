@@ -83,7 +83,7 @@ const Table = ({ children, items, intent, className, onClick }: Props) => {
                         <tr>{React.Children.toArray(children).filter((child) => React.isValidElement(child) && child.type === Head)}</tr>
                     </thead>
                 </table>
-                <p className="text-xs text-grey-800 mt-8">Aucun élément dans le tableau !</p>
+                <p className="text-xs text-center p-4 bg-white text-grey-800 mt-4">Aucun élément dans le tableau !</p>
             </>
         )
     }
