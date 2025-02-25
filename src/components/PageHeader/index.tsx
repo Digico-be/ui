@@ -1,12 +1,12 @@
 import Link from 'next/link'
 
 type Props = {
-    title: string
+    children: React.ReactNode
     label?: string
     href?: string
 }
 
-export const PageHeader = ({ title, label, href }: Props) => {
+export const PageHeader = ({ children, label, href }: Props) => {
     return (
         <div>
             {href && (
@@ -17,7 +17,7 @@ export const PageHeader = ({ title, label, href }: Props) => {
                     {label}
                 </Link>
             )}
-            <h1 className="leading-tight text-xl font-semibold">{title}</h1>
+            <h1 className="leading-tight text-xl font-semibold">{children}</h1>
         </div>
     )
 }
