@@ -6,5 +6,5 @@ type Props = {
 }
 
 export const Row = ({ children, className }: Props) => {
-    return <div className={clsx('grid grid-cols-2 gap-8 tablet:grid-cols-1', className)}>{children}</div>
+    return <div className={clsx('grid grid-cols-2 gap-8 tablet-min:grid-cols-1', className)}>{children}</div>
 }
