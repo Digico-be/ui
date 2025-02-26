@@ -1,11 +1,11 @@
 import { cva, VariantProps } from 'class-variance-authority'
 import clsx from 'clsx'
 
-const style = cva('rounded text-center leading-tight font-medium text-grey-800 bg-current/10', {
+const style = cva('text-center leading-tight font-medium text-grey-800 bg-current/10', {
     variants: {
         size: {
-            default: 'px-8 py-3 text-xs',
-            xs: 'px-4 py-2 text-xxs'
+            default: 'px-8 py-3 text-xs rounded',
+            xs: 'px-5 py-2 text-xxs rounded-sm'
         }
     },
     defaultVariants: {
