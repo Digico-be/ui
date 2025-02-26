@@ -8,7 +8,7 @@ const styles = cva(
     {
         variants: {
             intent: {
-                default: 'bg-primary text-white hover:bg-primary-active focus:bg-primary-active font-medium rounded',
+                default: 'bg-primary text-white hover:bg-main focus:bg-main font-medium rounded',
                 grey200: 'bg-grey-200 border border-grey-400 hover:bg-grey-400 focus:bg-grey-400 font-medium rounded ',
                 grey400: 'bg-grey-400 hover:bg-primary hover:text-white focus:text-white focus:bg-primary font-medium rounded ',
                 main: 'bg-main text-white hover:bg-primary focus:bg-primary font-medium rounded ',
