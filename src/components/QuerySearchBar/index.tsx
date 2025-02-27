@@ -61,3 +61,8 @@ export const QuerySearchBar = ({ className }: Props) => {
         </div>
     )
 }
+
+export const useQueryParams = () => {
+    const searchParams = useSearchParams()
+    return Object.fromEntries([...searchParams.entries()])
+}

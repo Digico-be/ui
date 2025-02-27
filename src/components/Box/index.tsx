@@ -28,11 +28,13 @@ type Props = {
     className?: string
     intent?: Variants['intent']
     size?: Variants['size']
+    title?: string
 }
 
-export const Box = ({ children, className, intent, size, ...props }: Props) => {
+export const Box = ({ children, className, intent, size, title, ...props }: Props) => {
     return (
         <div className={clsx(styles({ intent, size }), className)} {...props}>
+            {title && <span className="text-md font-bold mb-10">{title}</span>}
             {children}
         </div>
     )
