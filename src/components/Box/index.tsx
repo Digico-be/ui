@@ -6,7 +6,7 @@ const styles = cva('rounded', {
         intent: {
             info: 'bg-white border border-grey-400',
             success: 'bg-success-200',
-            warking: 'bg-warning-200',
+            warning: 'bg-warning-200',
             error: 'bg-error-200'
         },
         size: {
