@@ -5,6 +5,7 @@ import { Textarea } from './components/fields/Textarea'
 import { Label } from './components/Label'
 import { clsx } from 'clsx'
 import { useFormContext } from 'react-hook-form'
+import { Suffix } from './components/Suffix'
 
 const styles = cva('outline-none transition-all', {
     variants: {
@@ -13,11 +14,16 @@ const styles = cva('outline-none transition-all', {
         },
         size: {
             default: 'px-6 py-3 text-sm'
+        },
+        suffix: {
+            false: '',
+            true: 'rounded-r-none'
         }
     },
     defaultVariants: {
         intent: 'default',
-        size: 'default'
+        size: 'default',
+        suffix: false
     }
 })
 
@@ -28,6 +34,7 @@ type BaseFieldProps = {
     label?: React.ReactNode
     intent?: InputVariants['intent']
     size?: InputVariants['size']
+    suffix?: string
 }
 
 type ContainerProps = {
@@ -62,21 +69,27 @@ const Field = (props: FieldProps) => {
 
     const formRegister = props.name && register ? register(props.name) : {}
 
-    const { type = 'text', intent, size, className, ...restProps } = { ...props, ...formRegister }
+    const { type = 'text', intent, size, className, suffix, ...restProps } = { ...props, ...formRegister }
 
-    const computedClassName = clsx(styles({ intent, size }), className)
+    const computedClassName = clsx(styles({ intent, size, suffix: Boolean(suffix) }), className)
 
     if (props.type === 'textarea') {
         return (
             <Container {...restProps}>
-                <Textarea {...(restProps as TextareaProps)} className={computedClassName} />
+                <div className="flex">
+                    <Textarea {...(restProps as TextareaProps)} className={computedClassName} />
+                    <Suffix>{suffix}</Suffix>
+                </div>
             </Container>
         )
     }
 
     return (
         <Container {...restProps}>
-            <Input {...(restProps as InputProps)} className={computedClassName} type={props.type} />
+            <div className="flex">
+                <Input {...(restProps as InputProps)} className={computedClassName} type={props.type} />
+                <Suffix>{suffix}</Suffix>
+            </div>
         </Container>
     )
 }
