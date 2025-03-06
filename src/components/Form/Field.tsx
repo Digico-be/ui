@@ -6,6 +6,7 @@ import { Label } from './components/Label'
 import { clsx } from 'clsx'
 import { useFormContext } from 'react-hook-form'
 import { Suffix } from './components/Suffix'
+import { Prefix } from './components/Prefix'
 
 const styles = cva('outline-none transition-all w-full', {
     variants: {
@@ -18,12 +19,17 @@ const styles = cva('outline-none transition-all w-full', {
         suffix: {
             false: '',
             true: 'rounded-r-none'
+        },
+        prefix: {
+            false: '',
+            true: 'rounded-l-none'
         }
     },
     defaultVariants: {
         intent: 'default',
         size: 'default',
-        suffix: false
+        suffix: false,
+        prefix: false
     }
 })
 
@@ -35,6 +41,7 @@ type BaseFieldProps = {
     intent?: InputVariants['intent']
     size?: InputVariants['size']
     suffix?: string
+    prefix?: string
 }
 
 type ContainerProps = {
@@ -69,7 +76,7 @@ const Field = (props: FieldProps) => {
 
     const formRegister = props.name && register ? register(props.name) : {}
 
-    const { type = 'text', intent, size, className, suffix, ...restProps } = { ...props, ...formRegister }
+    const { type = 'text', intent, size, className, suffix, prefix, ...restProps } = { ...props, ...formRegister }
 
     const computedClassName = clsx(styles({ intent, size, suffix: Boolean(suffix) }), className)
 
@@ -87,6 +94,7 @@ const Field = (props: FieldProps) => {
     return (
         <Container {...restProps}>
             <div className="flex">
+                <Prefix>{prefix}</Prefix>
                 <Input {...(restProps as InputProps)} className={computedClassName} type={props.type} />
                 <Suffix>{suffix}</Suffix>
             </div>
