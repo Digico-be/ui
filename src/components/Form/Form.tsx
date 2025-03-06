@@ -4,6 +4,7 @@ import { Group } from './Group'
 import { Row } from './Row'
 import { Field } from './Field'
 import { Checkbox } from './Checkbox'
+import { SelectCustom } from './SelectCustom'
 
 type Props<T extends FieldValues> = {
     children: React.ReactNode
@@ -38,5 +39,6 @@ Form.Group = Group
 Form.Row = Row
 Form.Field = Field
 Form.Checkbox = Checkbox
+Form.Select = SelectCustom
 
 export { Form }
