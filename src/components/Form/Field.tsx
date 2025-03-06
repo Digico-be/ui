@@ -7,7 +7,7 @@ import { clsx } from 'clsx'
 import { useFormContext } from 'react-hook-form'
 import { Suffix } from './components/Suffix'
 
-const styles = cva('outline-none transition-all', {
+const styles = cva('outline-none transition-all w-full', {
     variants: {
         intent: {
             default: 'rounded border border-grey-400 placeholder:text-grey-600 focus:border-grey-600 focus:bg-grey-200'
