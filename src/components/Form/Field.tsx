@@ -78,12 +78,13 @@ const Field = (props: FieldProps) => {
 
     const { type = 'text', intent, size, className, suffix, prefix, ...restProps } = { ...props, ...formRegister }
 
-    const computedClassName = clsx(styles({ intent, size, suffix: Boolean(suffix) }), className)
+    const computedClassName = clsx(styles({ intent, size, suffix: Boolean(suffix), prefix: Boolean(prefix) }), className)
 
     if (props.type === 'textarea') {
         return (
             <Container {...restProps}>
                 <div className="flex">
+                    <Prefix>{prefix}</Prefix>
                     <Textarea {...(restProps as TextareaProps)} className={computedClassName} />
                     <Suffix>{suffix}</Suffix>
                 </div>

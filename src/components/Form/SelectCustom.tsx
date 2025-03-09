@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 
 import { Controller, useFormContext } from 'react-hook-form'
 import clsx from 'clsx'
+import { Label } from './components/Label'
 
 const Select = dynamic(() => import('react-select'), { ssr: false })
 
@@ -12,6 +13,7 @@ type OptionType = {
 
 type Props = {
     name: string
+    required?: boolean
     label?: string
     className?: string
     options: OptionType[]
@@ -28,7 +30,7 @@ export const SelectCustom = ({ className, name, label, onChange, ...props }: Pro
             render={({ field }) => {
                 return (
                     <div className="flex flex-col gap-2">
-                        {label && <label className="font-medium text-xs">{label}</label>}
+                        <Label required={props.required}>label</Label>
                         <Select
                             {...field}
                             {...props}
