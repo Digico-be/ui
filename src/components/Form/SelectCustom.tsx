@@ -30,7 +30,7 @@ export const SelectCustom = ({ className, name, label, onChange, ...props }: Pro
             render={({ field }) => {
                 return (
                     <div className="flex flex-col gap-2">
-                        <Label required={props.required}>label</Label>
+                        <Label required={props.required}>{label}</Label>
                         <Select
                             {...field}
                             {...props}
