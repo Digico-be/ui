@@ -25,7 +25,7 @@ type Props = {
 }
 
 export const SimpleSelect = ({ label, onChange, className, value: propValue, options, ...props }: Props) => {
-    const [selectedOption, setSelectedOption] = useState<OptionType | null>(null)
+    const [selectedOption, setSelectedOption] = useState<OptionType>(options[0])
 
     useEffect(() => {
         const newSelectedOption = options.find((option) => option.value === propValue) || null
