@@ -2,9 +2,6 @@
 
 import dynamic from 'next/dynamic'
 
-import { useEffect, useState } from 'react'
-import clsx from 'clsx'
-
 import { Label } from '../components/Label'
 import { styleSelect } from '.'
 
@@ -21,7 +18,7 @@ type Props = {
     label?: string
     className?: string
     options: OptionType[]
-    defaultValue?: string | number
+    defaultValue?: OptionType
     onChange?: (option: OptionType) => void
 }
 
