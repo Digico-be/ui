@@ -21,11 +21,11 @@ type Props = {
     label?: string
     className?: string
     options: OptionType[]
-    value?: string
+    defaultValue?: string | number
     onChange?: (option: OptionType) => void
 }
 
-export const SimpleSelect = ({ label, onChange, className, value: propValue, options, ...props }: Props) => {
+export const SimpleSelect = ({ label, onChange, options, ...props }: Props) => {
     return (
         <div className="flex flex-col gap-2">
             <Label required={props.required}>{label}</Label>
@@ -36,8 +36,8 @@ export const SimpleSelect = ({ label, onChange, className, value: propValue, opt
                     }
                 }}
                 options={options}
-                className={clsx('', className)}
                 styles={styleSelect}
+                {...props}
             />
         </div>
     )

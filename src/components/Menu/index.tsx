@@ -18,10 +18,10 @@ const Item = ({ children, href, ...props }: ItemProps) => {
     const pathname = usePathname()
 
     return (
-        <li key={href} {...props}>
+        <li key={href} {...props} className="flex">
             <Link
                 href={href}
-                className={`whitespace-nowrap leading-tight text-xs px-8 py-4 transition-all hover:text-primary hover:border-b-primary border-b-2 ${pathname === href ? 'border-main text-main' : 'text-grey-800 border-b-grey-400'}`}>
+                className={`whitespace-nowrap leading-tight text-xs px-8 py-4 transition-all hover:text-primary hover:border-b-primary border-b-2 ${pathname === href ? 'border-main text-main font-semibold' : 'text-grey-800 border-b-grey-400'}`}>
                 {children}
             </Link>
         </li>

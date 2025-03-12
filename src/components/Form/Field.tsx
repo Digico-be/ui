@@ -11,7 +11,7 @@ import { Prefix } from './components/Prefix'
 const styles = cva('outline-none transition-all w-full', {
     variants: {
         intent: {
-            default: 'rounded border border-grey-400 placeholder:text-grey-600 focus:border-grey-600 focus:bg-grey-200'
+            default: 'bg-white rounded border border-grey-400 placeholder:text-grey-600 focus:border-grey-600 focus:bg-grey-200'
         },
         size: {
             default: 'px-6 py-3 text-sm'
