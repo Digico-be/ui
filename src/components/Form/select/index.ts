@@ -1,4 +1,4 @@
-const styleSelect = {
+export const styleSelect = {
     control: (provided, state) => ({
         ...provided,
         backgroundColor: state.isFocused ? '#f7f7f7' : 'transparent',

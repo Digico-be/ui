@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 
 import { Label } from '../components/Label'
+import { styleSelect } from '.'
 
 const Select = dynamic(() => import('react-select'), { ssr: false })
 

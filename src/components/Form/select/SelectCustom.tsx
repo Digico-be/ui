@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import { Controller, useFormContext } from 'react-hook-form'
 import clsx from 'clsx'
 import { Label } from '../components/Label'
+import { styleSelect } from '.'
 
 const Select = dynamic(() => import('react-select'), { ssr: false })
 
