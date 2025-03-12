@@ -26,21 +26,11 @@ type Props = {
 }
 
 export const SimpleSelect = ({ label, onChange, className, value: propValue, options, ...props }: Props) => {
-    const [selectedOption, setSelectedOption] = useState<OptionType>(options[0])
-
-    useEffect(() => {
-        const newSelectedOption = options.find((option) => option.value === propValue) || null
-        setSelectedOption(newSelectedOption)
-    }, [propValue, options])
-
     return (
         <div className="flex flex-col gap-2">
             <Label required={props.required}>{label}</Label>
             <Select
-                //@ts-ignore
-                value={selectedOption.value}
                 onChange={(option: OptionType) => {
-                    setSelectedOption(option)
                     if (onChange) {
                         onChange(option)
                     }
