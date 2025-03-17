@@ -43,7 +43,7 @@ export const CustomFile = ({ name }: Props) => {
         <div className="h-40" {...getRootProps()}>
             <input {...getInputProps()} />
 
-            {watch(`${name}.url`) ? (
+            {watch(name) && watch(`${name}.url`) ? (
                 <div className="h-full relative group cursor-pointer bg-grey-200 rounded border border-grey-400 justify-center hover:border-grey-600 flex flex-col gap-4 items-center">
                     <div className="h-full w-full overflow-x-auto p-4 flex gap-4 items-center">
                         <div className="h-full relative flex-shrink-0">

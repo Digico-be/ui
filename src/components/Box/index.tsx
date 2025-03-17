@@ -1,7 +1,7 @@
 import { cva, VariantProps } from 'class-variance-authority'
 import { clsx } from 'clsx'
 
-const styles = cva('rounded', {
+const styles = cva('relative rounded', {
     variants: {
         intent: {
             info: 'bg-white border border-grey-400',
@@ -29,11 +29,18 @@ type Props = {
     intent?: Variants['intent']
     size?: Variants['size']
     title?: string
+    isLoading?: boolean
 }
 
-export const Box = ({ children, className, intent, size, title, ...props }: Props) => {
+export const Box = ({ children, className, intent, size, title, isLoading, ...props }: Props) => {
     return (
         <div className={clsx(styles({ intent, size }), className)} {...props}>
+            {isLoading ? (
+                <div className="pointer-events-none bg-white/40 w-full h-full absolute top-0 left-0 z-20 flex justify-center items-center">
+                    <div className="size-10 pointer-events-none border-current inline-block relative -translate-x-1/2 -translate-y-1/2 before:block before:absolute before:w-full before:h-full before:rounded-full before:border-solid before:border-2 before:border-t-current before:border-r-current before:border-b-transparent before:border-l-transparent before:animate-spin"></div>
+                </div>
+            ) : null}
+
             {title && <span className="text-md font-bold mb-8 block">{title}</span>}
             {children}
         </div>
