@@ -74,7 +74,12 @@ const Container = ({ children, label, ...props }: ContainerProps) => {
 const Field = (props: FieldProps) => {
     const register = useFormContext()?.register
 
-    const formRegister = props.name && register ? register(props.name) : {}
+    const formRegister =
+        props.name && register
+            ? register(props.name, {
+                  valueAsNumber: props.type === 'number'
+              })
+            : {}
 
     const { type = 'text', intent, size, className, suffix, prefix, ...restProps } = { ...props, ...formRegister }
 
