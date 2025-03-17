@@ -21,7 +21,10 @@
         "react-hook-form": "^7.53.1",
         "tailwindcss": "^4.0.6",
         "@digico/utils": "github:Digico-be/utils-client",
-        "react-select": "^5.10.0"
+        "react-select": "^5.10.0",
+        "react-dropzone": "^14.3.8",
+        "browser-image-compression": "^2.0.2",
+        "sonner": "^2.0.0"
     },
     "devDependencies": {
         "@types/node": "^22.13.4",

@@ -5,6 +5,7 @@ import { Row } from './Row'
 import { Field } from './Field'
 import { Checkbox } from './Checkbox'
 import { SelectCustom } from './select/SelectCustom'
+import { CustomFile } from './file/CustomFile'
 
 type Props<T extends FieldValues> = {
     children: React.ReactNode
@@ -40,5 +41,6 @@ Form.Row = Row
 Form.Field = Field
 Form.Checkbox = Checkbox
 Form.Select = SelectCustom
+Form.File = CustomFile
 
 export { Form }
